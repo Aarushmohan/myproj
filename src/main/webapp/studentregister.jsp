@@ -76,7 +76,7 @@
                     </tr>
                   <tr>
                         <td>Confirm Password</td>
-                        <td><input type="text" name="lastName" value="" /></td>
+                        <td><input type="password" name="passw" value="" /></td>
                     </tr>
                     <tr>
                         <td><input type="submit" value="Submit" /></td>
