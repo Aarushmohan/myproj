@@ -55,7 +55,7 @@
                     </tr>
                     <tr>
                         <td>Class</td>
-                        <td><input type="text" name="class" value="" /></td>
+                        <td><input type="text" name="classn" value="" /></td>
                     </tr>
                      <tr>
                         <td>School Name/College Name</td>
