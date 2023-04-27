@@ -1,7 +1,11 @@
 <%@ page import="java.sql.*"%>
 <%
-    String userName = request.getParameter("");   
+    String userName = request.getParameter("userName");
     String password = request.getParameter("password");
+     String phone = request.getParameter("phone");
+      String class = request.getParameter("class");
+       String name = request.getParameter("name");
+        String passw = request.getParameter("passw");
     String firstName = request.getParameter("firstName");
     String lastName = request.getParameter("lastName");
     String email = request.getParameter("email");
@@ -10,7 +14,7 @@
     "testuser", "root");
     Statement st = con.createStatement();
     int i = st.executeUpdate("insert into student(student first name, student last name, phone number, class, school name, mail id, username, password, confirm password, regdate, time) values ('" + firstName + "','"
-    + lastName + "','" + email + "','" + userName + "','" + password + "', CURDATE() , CURTIME())");
+    + lastName + "',' " + phone + "',' " + class + "',' " + name + "',' " + email + "','" + userName + "','" + password + "',' " + passw + "', CURDATE() , CURTIME())");
     if (i > 0) {
         response.sendRedirect("welcome.jsp");
         
