@@ -225,7 +225,7 @@ span.psw {
           <td><button type="reset">Reset</button></td>
       </tr>
       <tr>
-          <td colspan="2">New User <a href="register.jsp">Register Here</a></td>
+          <td colspan="2">New User <a href="studentregister.jsp">Register Here</a></td>
        </tr>
     
   </div>
