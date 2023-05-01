@@ -45,9 +45,7 @@ pipeline {
 
   stage('Docker Build and Tag') {
            steps {
-		   /*script{
-			   dockerImage=docker.build ("mohanaarush/samplewebapp:latest")
-			   dockerImage.tag()*/
+		   
              sh 'docker build -t samplewebapp:latest .'
 	     sh 'docker tag samplewebapp mohanaarush/samplewebapp:latest'
 	   
@@ -69,28 +67,7 @@ pipeline {
 		  }
           }
         
-/*		
-    stage('push the artifacts to nexus')
-	{
-		steps{
-		nexusArtifactUploader(
-		            nexusVersion:"nexus3", 
-                            protocol:"http", 
-                            nexusUrl: "10.12.124.82:8081",
-                            groupId: 'com.test',
-                            version: '0.0.2-SNAPSHOT',
-                            repository:'database',
-                            credentialsId:'nexus' ,
-                            artifacts: [
-                                [artifactId:'Database' ,
-                                classifier: '',
-                                file: 'target/LoginWebApp-1.war',
-                                type: 'war']
-                            ]
-			);
-	}      
-	}
-	*/	
+	
 		
 	stage('Push Docker Images to Nexus Registry'){
 		steps{
