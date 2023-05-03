@@ -51,15 +51,15 @@
                     </tr>
                     <tr>
                         <td>Email</td>
-                        <td><input type="text" name="email" value="" /></td>
+                        <td><input type="text" name="email" value="" required /></td>
                     </tr>
                     <tr>
                         <td>User Name</td>
-                        <td><input type="text" name="userName" value="" /></td>
+                        <td><input type="text" name="userName" value="" required /></td>
                     </tr>
                      <tr>
                         <td>Password</td>
-                        <td><input type="password" name="password" value="" /></td>
+                        <td><input type="password" name="password" value="" required /></td>
                     </tr>
                     <tr>
                         <td><input type="submit" value="Submit" /></td>
