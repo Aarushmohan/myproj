@@ -56,7 +56,8 @@ stage('push the artifacts to nexus')
                             ]
 			);
 
-	}		
+	}	
+	}
 
   stage('Docker Build and Tag') {
            steps {
