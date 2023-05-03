@@ -43,11 +43,11 @@
                 <tbody>
                     <tr>
                         <td>First Name</td>
-                        <td><input type="text" name="firstName" value="" /></td>
+                        <td><input type="text" name="firstName" value="" required /></td>
                     </tr>
                     <tr>
                         <td>Last Name</td>
-                        <td><input type="text" name="lastName" value="" /></td>
+                        <td><input type="text" name="lastName" value="" required /></td>
                     </tr>
                     <tr>
                         <td>Email</td>
