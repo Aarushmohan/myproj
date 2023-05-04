@@ -28,13 +28,11 @@
             // Execute the query
            ResultSet rs = stmt.executeQuery();
 
-         
-           
-            
             // Test the query result
             if(rs.next()) {
                 // Login successful
                 response.sendRedirect("welcome.jsp");
+                
             } else {
                 // Login failed
                 out.println("<p>Invalid username or password. Please try again.</p>");
@@ -44,4 +42,4 @@
         
     %>
  </body>
-            </html>
+</html>
