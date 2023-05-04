@@ -20,7 +20,7 @@
     Class.forName("com.mysql.jdbc.Driver");
     Connection conn = DriverManager.getConnection("jdbc:mysql://10.12.124.82:3306/testdb1", 
     "testuser", "root");
-    PreparedStatement stmt = conn.prepareStatement(sql);
+    PreparedStatement stmt = conn.prepareStatement();
             
             // Prepare SQL query to check if username and password match
             String sql = "SELECT * FROM USER WHERE username = ? AND password = ?";
