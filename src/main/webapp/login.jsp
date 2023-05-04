@@ -18,20 +18,29 @@
 
     <%-- Check if username and password are valid --%>
     <% 
-        
-         
-     Class.forName("com.mysql.jdbc.Driver");
-    Connection conn = DriverManager.getConnection("jdbc:mysql://10.12.124.82:3306/testdb1", 
-    "testuser", "root");
+        String url = "jdbc:mysql://10.12.124.82:3306/testdb1";
+        String user = "testuser";
+        String password = "root";
+        String username = request.getParameter("username");
+        String passwordInput = request.getParameter("password");
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        try {
+            // Load the JDBC driver
+            Class.forName("com.mysql.jdbc.Driver");
+            
+            // Get a connection to the database
+            conn = DriverManager.getConnection(url, user, password);
             
             // Prepare SQL query to check if username and password match
             String sql = "SELECT * FROM USER WHERE username = ? AND password = ?";
-            PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt = conn.prepareStatement(sql);
             stmt.setString(1, username);
             stmt.setString(2, passwordInput);
             
             // Execute the query
-            ResultSet rs = stmt.executeQuery();
+            rs = stmt.executeQuery();
             
             // Test the query result
             if(rs.next()) {
