@@ -1,36 +1,34 @@
-<%@ page import="java.sql.*" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Login Page</title>
+</head>
+<body>
+    <h1>Login Page</h1>
+    <form method="post" action="login.jsp">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username"><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"><br><br>
+        <input type="submit" value="Login">
+    </form>
 
-<HTML>
-       <HEAD>
-       <TITLE>The View Of Database Table </TITLE>
-       </HEAD>
-       <BODY BGCOLOR="cyan">
-       <H1>The View Of Database Table </H1>
-       <%  Class.forName("com.mysql.jdbc.Driver");
-              java.sql.Connection con = java.sql.DriverManager.getConnection("jdbc:mysql://10.12.124.82:3306/testdb1",
-            "testuser", "root");
-           Statement statement = con.createStatement() ;
-          ResultSet resultset = statement.executeQuery("select * from USER") ;
-       %>
-      <TABLE BORDER="1">
-      <TR>
-      <TH>ID</TH>
-      <TH>Name</TH>
-      <TH>City</TH>
-      <TH>State</TH>
-      <TH>Country</TH>
-      <TH>Email</TH>
-      </TR>
-      <% while(resultset.next()){ %>
-      <TR>
-       <TD> <%= resultset.getString(1) %></td>
-       <TD> <%= resultset.getString(2) %></TD>
-       <TD> <%= resultset.getString(3) %></TD>
-       <TD> <%= resultset.getString(4) %></TD>
-       <TD> <%= resultset.getString(5) %></TD>
-       <TD> <%= resultset.getString(6) %></TD>
-      </TR>
-      <% } %>
-     </TABLE>
-     </BODY>
-</HTML>
+    <%-- Check if username and password are valid --%>
+    <% 
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        if(username != null && password != null) {
+            if(username.equals("myusername") && password.equals("mypassword")) {
+                // Login successful
+                response.sendRedirect("welcome.jsp");
+            } else {
+                // Login failed
+                out.println("<p>Invalid username or password. Please try again.</p>");
+            }
+        }
+    %>
+</body>
+</html>
