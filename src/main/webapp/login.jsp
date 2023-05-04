@@ -18,7 +18,7 @@
     Statement stmt = conn.createStatement(i);
             
             // Prepare SQL query to check if username and password match
-            String i= stmt.execute(" SELECT * FROM USER WHERE username = ? AND password = ?");
+            String i= "SELECT * FROM USER WHERE username = ? AND password = ?";
          
             stmt.setString(1, username);
             stmt.setString(2, password);
