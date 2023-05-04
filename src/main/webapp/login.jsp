@@ -31,16 +31,16 @@
             Class.forName("com.mysql.jdbc.Driver");
             
             // Get a connection to the database
-            conn = DriverManager.getConnection(url, user, password);
+            Connection conn = DriverManager.getConnection(url, user, password);
             
             // Prepare SQL query to check if username and password match
             String sql = "SELECT * FROM USER WHERE username = ? AND password = ?";
-            stmt = conn.prepareStatement(sql);
+           PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setString(1, username);
             stmt.setString(2, passwordInput);
             
             // Execute the query
-            rs = stmt.executeQuery();
+             ResultSet rs = stmt.executeQuery();
             
             // Test the query result
             if(rs.next()) {
