@@ -29,8 +29,7 @@
            ResultSet rs = stmt.executeQuery();
 
          
-            // Execute the query
-             ResultSet rs = stmt.executeQuery("select * from USER where username = ? and password = ?");
+           
             
             // Test the query result
             if(rs.next()) {
