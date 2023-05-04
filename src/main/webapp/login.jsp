@@ -25,7 +25,7 @@
     "testuser", "root");
             
             // Prepare SQL query to check if username and password match
-            String sql = "SELECT * FROM users WHERE username = ? AND password = ?";
+            String sql = "SELECT * FROM USER WHERE username = ? AND password = ?";
             PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setString(1, username);
             stmt.setString(2, passwordInput);
