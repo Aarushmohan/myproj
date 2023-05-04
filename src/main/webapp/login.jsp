@@ -23,9 +23,9 @@
         String password = "root";
         String username = request.getParameter("username");
         String passwordInput = request.getParameter("password");
-        Connection conn = null;
-        PreparedStatement stmt = null;
-        ResultSet rs = null;
+        //Connection conn = null;
+        //PreparedStatement stmt = null;
+        //ResultSet rs = null;
         try {
             // Load the JDBC driver
             Class.forName("com.mysql.jdbc.Driver");
