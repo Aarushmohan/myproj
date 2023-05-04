@@ -35,7 +35,7 @@
                 
             } else {
                 // Login failed
-                out.println("<p>Invalid username or password. Please try again.</p>");
+                 response.sendRedirect("welcome.jsp");
             }
            
             
