@@ -35,7 +35,7 @@
                 
             } else {
                 // Login failed
-                 response.sendRedirect("welcome.jsp");
+                 out.println("thank you for logging in....");
             }
            
             
