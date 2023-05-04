@@ -181,7 +181,7 @@ span.psw {
         <table>
          <tr>
                
-                <td><blockquote><a href="" target="call">ADMIN</a></blockquote></td>
+                
     
                 <td><blockquote><a href="index.jsp" target="call">SIGN IN</a></blockquote></td>
 
@@ -191,7 +191,7 @@ span.psw {
    
              <td><blockquote><a href="" target="call">CONTACT</a></blockquote></td>
              
-              <td><blockquote><a href="route.html" target="call">ROUTE SEARCH</a></blockquote></td>
+              <td><blockquote><a href="" target="call">ROUTE SEARCH</a></blockquote></td>
                
         </tr>
     </table>
