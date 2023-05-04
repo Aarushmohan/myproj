@@ -17,15 +17,13 @@
     Class.forName("com.mysql.jdbc.Driver");
     Connection conn = DriverManager.getConnection("jdbc:mysql://10.12.124.82:3306/testdb1", 
     "testuser", "root");
+    String name=String.valueOf(request.getAttribute("username"));
+    String password=String.valueOf(request.getAttribute("password"));
     
-    
-   String uname=request.getAttribute("username");
-   string password=request.getAttribute("password");
    String sql = "SELECT * FROM USER WHERE username = ? AND password = ?";
-            stmt.setString(1, uname);
+           PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt.setString(1, name);
             stmt.setString(2, password);
-    PreparedStatement stmt = conn.prepareStatement(sql);
-            
             
             // Execute the query
            ResultSet rs = stmt.executeQuery();
