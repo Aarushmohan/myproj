@@ -15,16 +15,13 @@
     Class.forName("com.mysql.jdbc.Driver");
     Connection conn = DriverManager.getConnection("jdbc:mysql://10.12.124.82:3306/testdb1", 
     "testuser", "root");
-    Statement stmt = conn.createStatement(i);
+    Statement stmt = conn.createStatement();
             
             // Prepare SQL query to check if username and password match
-            String i= "SELECT * FROM USER WHERE username = ? AND password = ?";
+// String i= "SELECT * FROM USER WHERE username = ? AND password = ?";
          
-            stmt.setString(1, username);
-            stmt.setString(2, password);
-            
             // Execute the query
-             ResultSet rs = stmt.executeQuery();
+             ResultSet rs = stmt.executeQuery("SELECT * FROM USER WHERE username = ? AND password = ?");
             
             // Test the query result
             if(rs.next()) {
