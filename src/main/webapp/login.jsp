@@ -21,7 +21,7 @@
             String i= stmt.execute(" SELECT * FROM USER WHERE username = ? AND password = ?");
          
             stmt.setString(1, username);
-            stmt.setString(2, passwordInput);
+            stmt.setString(2, password);
             
             // Execute the query
              ResultSet rs = stmt.executeQuery();
