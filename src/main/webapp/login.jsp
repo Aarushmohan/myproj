@@ -31,11 +31,11 @@
             // Test the query result
             if(rs.next()) {
                 // Login successful
-                response.sendRedirect("welcome.jsp");
+                 out.println("thank you for logging in....");
                 
             } else {
                 // Login failed
-                 out.println("thank you for logging in....");
+                 out.println("invalid ....");
             }
            
             
