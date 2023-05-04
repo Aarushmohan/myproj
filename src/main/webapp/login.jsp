@@ -18,24 +18,14 @@
 
     <%-- Check if username and password are valid --%>
     <% 
-        String url = "jdbc:mysql://10.12.124.82:3306/testdb1";
-        String user = "testuser";
-        String password = "root";
-        String username = request.getParameter("username");
-        String passwordInput = request.getParameter("password");
-        //Connection conn = null;
-        //PreparedStatement stmt = null;
-        //ResultSet rs = null;
-        try {
-            // Load the JDBC driver
-            Class.forName("com.mysql.jdbc.Driver");
-            
-            // Get a connection to the database
-            Connection conn = DriverManager.getConnection(url, user, password);
+       Class.forName("com.mysql.jdbc.Driver");
+    Connection con = DriverManager.getConnection("jdbc:mysql://10.12.124.82:3306/testdb1", 
+    "testuser", "root");
+             PreparedStatement stmt = conn.prepareStatement(sql);
             
             // Prepare SQL query to check if username and password match
             String sql = "SELECT * FROM USER WHERE username = ? AND password = ?";
-           PreparedStatement stmt = conn.prepareStatement(sql);
+         
             stmt.setString(1, username);
             stmt.setString(2, passwordInput);
             
@@ -50,36 +40,7 @@
                 // Login failed
                 out.println("<p>Invalid username or password. Please try again.</p>");
             }
-        } catch (ClassNotFoundException e) {
-            out.println("<p>Could not load JDBC driver</p>");
-            e.printStackTrace();
-        } catch (SQLException e) {
-            out.println("<p>Could not connect to the database testdb1</p>");
-            e.printStackTrace();
-        } finally {
-            // Close the database connection
-            if(rs != null) {
-                try {
-                    rs.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-            if(stmt != null) {
-                try {
-                    stmt.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-            if(conn != null) {
-                try {
-                    conn.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
+        
     %>
 </body>
 </html>
